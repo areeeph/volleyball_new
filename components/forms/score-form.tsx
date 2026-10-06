@@ -59,8 +59,8 @@ export default function ScoreForm({ teams, score }: Props) {
   } = useForm<FormFields>({
     defaultValues: {
       current_set: score?.current_set || 1,
-      team1: score?.team1.id || "",
-      team2: score?.team2.id || "",
+      team1: score?.team1?.id || "",
+      team2: score?.team2?.id || "",
       team1_score: score1,
       team2_score: score2,
     },
@@ -336,9 +336,9 @@ export default function ScoreForm({ teams, score }: Props) {
           Add Set
         </button>
         <button
+          type="button"
           disabled={sets.length == 0}
           onClick={() => deleteSet()}
-          type="button"
           className="inline-flex items-center justify-center rounded-xl border border-red-700 bg-red-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
         >
           Delete Set
