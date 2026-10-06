@@ -1,4 +1,3 @@
-import ScorePage from "./page.client";
 import { Score, Team } from "@/lib/models";
 
 export default async function Page() {
@@ -13,5 +12,5 @@ export default async function Page() {
   const score: Score[] = data.data;
   const teams: Team[] = data1.data;
 
-  return <ScorePage teams={teams} scores={score} />;
+  return <div>ewrewre</div>;
 }

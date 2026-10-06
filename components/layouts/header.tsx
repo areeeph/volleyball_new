@@ -1,3 +1,5 @@
+"use client";
+
 import { ChevronDown, Menu, Bell, Search } from "lucide-react";
 import Link from "next/link";
 type NavItem = {
