@@ -21,8 +21,6 @@ export default function ScorePage({ teams, scores }: Props) {
     socket.connect();
 
     const handleCreated = (data: any) => {
-      console.log("New match:", data);
-      console.log("New match sets:", data.data.sets);
       setSets(data.data.sets);
       setTeam1(data.data.team1);
       setTeam2(data.data.team2);
