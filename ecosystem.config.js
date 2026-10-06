@@ -12,7 +12,6 @@ module.exports = {
         NODE_ENV: "production",
       },
       env_production: "production",
-      log_date_format: "YYYY-MM-DD HH:mm:ss",
     },
   ],
 };
