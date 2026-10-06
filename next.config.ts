@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "kendhikulhudhoo.gov.mv",
+        hostname: "volley_api.aliareef.com",
         pathname: "/images/**",
       },
       {
