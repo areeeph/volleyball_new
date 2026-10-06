@@ -1,6 +1,6 @@
 "use client";
 
-import { Schedule } from "@/lib/models";
+import { Team } from "@/lib/models";
 import { Trash2, SquarePen } from "lucide-react";
 import {
   AlertDialog,
@@ -14,13 +14,13 @@ import {
   AlertDialogMedia,
 } from "@/components/ui/alert-dialog";
 import { useState } from "react";
+import Image from "next/image";
 
 type Props = {
-  schedules: Schedule[];
-  total: number;
+  teams: Team[];
 };
 
-export default function SchedulesTable({ schedules, total }: Props) {
+export default function TeamsTable({ teams }: Props) {
   const [openAlert, setOpenAlert] = useState(false);
   const [selectedId, setSelectedId] = useState("");
 
@@ -34,7 +34,7 @@ export default function SchedulesTable({ schedules, total }: Props) {
       return;
     }
     try {
-      const response = await fetch(`/api/schedules/${selectedId}`, {
+      const response = await fetch(`/api/teams/${selectedId}`, {
         method: "DELETE",
       });
 
@@ -44,7 +44,7 @@ export default function SchedulesTable({ schedules, total }: Props) {
         throw new Error(`Request Failed: ${response.status}`);
       }
 
-      window.location.href = "/schedule";
+      window.location.href = "/admin/teams";
       setOpenAlert(false);
     } catch (error) {
       console.error("Failed to delete data:", error);
@@ -58,19 +58,15 @@ export default function SchedulesTable({ schedules, total }: Props) {
           <thead className="border-b border-gray-200 bg-gray-50">
             <tr>
               <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                #
+                Logo
               </th>
 
               <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                Category
+                Name
               </th>
 
               <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                Collection Days
-              </th>
-
-              <th className="px-5 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                As Required
+                Short Name
               </th>
 
               <th className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide text-gray-500">
@@ -80,39 +76,27 @@ export default function SchedulesTable({ schedules, total }: Props) {
           </thead>
 
           <tbody className="divide-y divide-gray-100">
-            {schedules.length > 0 ? (
-              schedules.map((schedule) => (
-                <tr key={schedule.id} className="transition hover:bg-gray-50">
-                  {/* Sequence */}
-                  <td className="px-5 py-4 text-sm text-gray-500">
-                    {schedule.sequenceId}
-                  </td>
-
+            {teams.length > 0 ? (
+              teams.map((team) => (
+                <tr key={team.id} className="transition hover:bg-gray-50">
                   <td className="px-5 py-4">
                     <div className="font-medium text-gray-900">
-                      {schedule.category.name}
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_IMAGES_URL}${team.logo}`}
+                        alt={team.name}
+                        width={50}
+                        height={50}
+                        className="h-10 w-10 rounded-full object-cover"
+                      />
                     </div>
                   </td>
 
                   <td className="px-5 py-4">
-                    <div className="font-medium text-gray-900">
-                      <ul className="flex items-center space-x-2 capitalize">
-                        {schedule.days.map((day) => (
-                          <li
-                            key={day}
-                            className="after:content-[','] last:after:content-none"
-                          >
-                            {day}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <div className="font-medium text-gray-900">{team.name}</div>
                   </td>
 
                   <td className="px-5 py-4">
-                    <div className="font-medium text-gray-900">
-                      {schedule.asRequired ? "Yes" : "No"}
-                    </div>
+                    <div className=" text-gray-800">{team.short_name}</div>
                   </td>
 
                   {/* Actions */}
@@ -121,13 +105,13 @@ export default function SchedulesTable({ schedules, total }: Props) {
                       <button
                         type="button"
                         title="Edit"
-                        className="rounded-lg p-2 text-gray-500 transition hover:bg-gray-100 hover:text-gray-900"
+                        className="hidden rounded-lg p-2 text-gray-500 transition hover:bg-gray-100 hover:text-gray-900"
                       >
                         <SquarePen className="h-4 w-4 text-blue-600" />
                       </button>
 
                       <button
-                        onClick={() => showDeleteAlert(schedule.id)}
+                        onClick={() => showDeleteAlert(team.id)}
                         type="button"
                         title="Delete"
                         className="rounded-lg p-2 text-gray-500 transition hover:bg-red-50 hover:text-red-600"
@@ -153,16 +137,6 @@ export default function SchedulesTable({ schedules, total }: Props) {
             )}
           </tbody>
         </table>
-      </div>
-
-      {/* Footer */}
-      <div className="border-t border-gray-200 px-5 py-3">
-        <p className="text-sm text-gray-500">
-          Showing{" "}
-          <span className="font-medium text-gray-700">{schedules.length}</span>{" "}
-          of <span className="font-medium text-gray-700">{total}</span>{" "}
-          schedules
-        </p>
       </div>
 
       <AlertDialog open={openAlert} onOpenChange={setOpenAlert}>

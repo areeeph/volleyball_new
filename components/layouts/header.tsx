@@ -1,4 +1,16 @@
 import { ChevronDown, Menu, Bell, Search } from "lucide-react";
+import Link from "next/link";
+
+const navItems: NavItem[] = [
+  {
+    title: "Score",
+    href: "/admin/score",
+  },
+  {
+    title: "Teams",
+    href: "/admin/teams",
+  },
+];
 
 export default function Header() {
   return (
@@ -7,26 +19,23 @@ export default function Header() {
         <Menu className="h-6 w-6" strokeWidth={2} />
       </button>
 
-      <div className="relative hidden w-96 md:block">
-        <Search
-          className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
-          strokeWidth={2}
-        />
+      <Link
+        key={navItems[0].title}
+        href={navItems[0].href}
+        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900"
+      >
+        <span>{navItems[0].title}</span>
+      </Link>
 
-        <input
-          type="text"
-          placeholder="Search anything..."
-          className="h-10 w-full rounded-lg border-0 bg-gray-100 pl-10 pr-4 text-sm outline-none ring-0 placeholder:text-gray-400 focus:bg-gray-50 focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
+      <Link
+        key={navItems[1].title}
+        href={navItems[1].href}
+        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900"
+      >
+        <span>{navItems[1].title}</span>
+      </Link>
 
       <div className="ml-auto flex items-center gap-4">
-        <button className="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100">
-          <Bell className="h-5 w-5" strokeWidth={2} />
-
-          <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-500"></span>
-        </button>
-
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-100 text-sm font-semibold text-blue-600">
             AA

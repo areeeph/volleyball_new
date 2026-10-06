@@ -29,13 +29,13 @@ export function proxy(request: NextRequest) {
   const isLoginPage = pathname === "/login";
 
   const isProtectedRoute =
-    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/score") ||
     pathname.startsWith("/profile") ||
     pathname.startsWith("/admin");
 
   // Logged in → don't allow login page
   if (isLoginPage && isLoggedIn) {
-    return NextResponse.redirect(new URL("/admin/notice", request.url));
+    return NextResponse.redirect(new URL("/", request.url));
   }
 
   // Not logged in / expired → login

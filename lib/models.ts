@@ -1,36 +1,21 @@
-export type District = {
+export type Set = {
+  set_number: number;
+  team1_score: number;
+  team2_score: number;
+};
+export type Score = {
   id: string;
-  name: string;
+  sequenceId: number;
+  sets: Set[];
+  current_set: number;
+  team1: Team;
+  team2: Team;
 };
 
-export type Premise = {
+export type Team = {
   id: string;
   sequenceId: number;
   name: string;
-  address?: string;
-  number?: string;
-  district: District;
-  premiseType: string;
-  contact_person?: string;
-  contact_number?: string;
-  location?: string;
-  occupants?: number;
-  status?: "active" | "inactive";
-  remarks?: string;
-};
-
-export type WasteCategory = {
-  id: string;
-  sequenceId: number;
-  name: string;
-  parentCategory?: WasteCategory;
-  status?: "active" | "inactive";
-};
-
-export type Schedule = {
-  id: string;
-  sequenceId: number;
-  category: WasteCategory;
-  days: string[];
-  asRequired: boolean;
+  short_name: string;
+  logo: string;
 };

@@ -2,25 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import {
-  LayoutDashboard,
-  Users,
-  Settings,
-  FileText,
-  ChevronDown,
-  Package,
-  BarChart3,
-  UserCog,
-  Shield,
-  Houses,
-  Tags,
-  CalendarCheck,
-  NotebookPen,
-  User,
-  Van,
-  UserRoundGroup,
-  MapPin,
-} from "lucide-react";
+import { Volleyball, Users, ChevronDown, UserCog, Shield } from "lucide-react";
 
 type SubNavItem = {
   title: string;
@@ -36,113 +18,14 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    title: "Dashboard",
-    href: "/dashboard",
-    icon: LayoutDashboard,
+    title: "Score",
+    href: "/admin/score",
+    icon: Volleyball,
   },
-
   {
-    title: "Collections",
-    icon: NotebookPen,
-    children: [
-      {
-        title: "Daily Collection",
-        href: "/collections",
-      },
-
-      {
-        title: "Collections Register",
-        href: "/collections-register",
-      },
-    ],
-  },
-
-  {
-    title: "Schedule",
-    icon: CalendarCheck,
-    href: "/schedule",
-  },
-
-  {
-    title: "Waste Categories",
-    href: "/waste-categories",
-    icon: Tags,
-  },
-
-  {
-    title: "Premises",
-    href: "/premises",
-    icon: Houses,
-  },
-
-  {
-    title: "Districts",
-    href: "/districts",
-    icon: MapPin,
-  },
-
-  {
-    title: "Labour Teams",
-    href: "/labour-teams",
-    icon: UserRoundGroup,
-  },
-
-  {
-    title: "Staffs",
-    href: "/staffs",
+    title: "Teams",
+    href: "/admin/teams",
     icon: Users,
-  },
-
-  {
-    title: "Vehicles",
-    href: "/vehicles",
-    icon: Van,
-  },
-
-  {
-    title: "Reports",
-    href: "/reports",
-    icon: BarChart3,
-  },
-
-  {
-    title: "Documents",
-    icon: FileText,
-    children: [
-      {
-        title: "All Documents",
-        href: "/documents",
-      },
-      {
-        title: "Archived",
-        href: "/documents/archived",
-      },
-    ],
-  },
-
-  {
-    title: "Users",
-    icon: User,
-    children: [
-      {
-        title: "All Users",
-        href: "/users",
-      },
-      {
-        title: "Add User",
-        href: "/users/add",
-      },
-      {
-        title: "User Roles",
-        href: "/users/roles",
-      },
-    ],
-  },
-
-  {
-    title: "Settings",
-    href: "/settings",
-    icon: Settings,
   },
 ];
 
