@@ -3,8 +3,8 @@ import { Score, Team } from "@/lib/models";
 
 export default async function Page() {
   const [response, response1] = await Promise.all([
-    fetch(`${process.env.API_URL}/scores`),
-    fetch(`${process.env.API_URL}/teams`),
+    fetch(`${process.env.API_URL}/scores`, { cache: "no-store" }),
+    fetch(`${process.env.API_URL}/teams`, { cache: "no-store" }),
   ]);
 
   const data = await response.json();
