@@ -11,7 +11,7 @@ type Props = {
   teams: Team[];
   scores: Score[];
 };
-export default function ScorePage({ teams, scores }: Props) {
+export default function ScoreFrontPage({ teams, scores }: Props) {
   const [score, setScore] = useState<Score | null>(scores[0] || null);
   const [sets, setSets] = useState<Set[]>(score?.sets || []);
   const [team1, setTeam1] = useState<Team | null>(score?.team1 || null);

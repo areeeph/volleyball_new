@@ -1,4 +1,4 @@
-import ScorePage from "./page.client";
+import ScoreFrontPage from "./page.client";
 import { Score, Team } from "@/lib/models";
 
 export default async function Page() {
@@ -15,5 +15,5 @@ export default async function Page() {
 
   console.log(data);
 
-  return <ScorePage teams={teams} scores={score} />;
+  return <ScoreFrontPage teams={teams} scores={score} />;
 }
