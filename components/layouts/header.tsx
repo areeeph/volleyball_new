@@ -1,5 +1,9 @@
 import { ChevronDown, Menu, Bell, Search } from "lucide-react";
 import Link from "next/link";
+type NavItem = {
+  title: string;
+  href: string;
+};
 
 const navItems: NavItem[] = [
   {
