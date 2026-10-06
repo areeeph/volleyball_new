@@ -1,4 +1,5 @@
 import { Score, Team } from "@/lib/models";
+import ScorePage from "./page.client";
 
 export default async function Page() {
   const [response, response1] = await Promise.all([
@@ -12,5 +13,5 @@ export default async function Page() {
   const score: Score[] = data.data;
   const teams: Team[] = data1.data;
 
-  return <div>ewrewre</div>;
+  return <ScorePage teams={teams} scores={score} />;
 }
