@@ -61,7 +61,7 @@ export default function TeamForm({ closeSheet, team }: Props) {
       });
 
       if (response.ok) {
-        //window.location.href = "/admin/teams";
+        window.location.href = "/admin/teams";
       }
     } else {
       const response = await fetch(`/api/teams/${team.id}`, {
@@ -73,7 +73,7 @@ export default function TeamForm({ closeSheet, team }: Props) {
       });
 
       if (response.ok) {
-        //window.location.href = "/admin/teams";
+        window.location.href = "/admin/teams";
       }
     }
   };

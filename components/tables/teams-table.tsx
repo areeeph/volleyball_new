@@ -44,7 +44,7 @@ export default function TeamsTable({ teams }: Props) {
         throw new Error(`Request Failed: ${response.status}`);
       }
 
-      //window.location.href = "/admin/teams";
+      window.location.href = "/admin/teams";
       setOpenAlert(false);
     } catch (error) {
       console.error("Failed to delete data:", error);
