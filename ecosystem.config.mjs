@@ -1,7 +1,7 @@
-export default {
+module.exports = {
   apps: [
     {
-      name: "volleyball",
+      name: "Volleyball Scoreboard",
       script: "npm",
       args: "start",
       instances: 1,
