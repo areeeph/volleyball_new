@@ -58,9 +58,9 @@ export default function ScorePage({ teams, scores }: Props) {
   return (
     <div className="w-480 flex justify-center ">
       <div className="relative">
-        <img src="/score.png" alt="" />
+        <img src="/score.webp" alt="" />
         <div className="absolute top-7 left-15">
-          <div className="rounded-full overflow-hidden w-40 h-32.5 flex items-center justify-center">
+          <div className=" rounded-full overflow-hidden w-40 h-32.5 flex items-center justify-center">
             <Image
               width={200}
               height={120}
@@ -82,27 +82,27 @@ export default function ScorePage({ teams, scores }: Props) {
           </div>
         </div>
         <div className="absolute top-20.75 right-77.5">
-          <div className="  w-60 h-20 flex items-center justify-center">
+          <div className="  w-54 h-20 flex items-center justify-center">
             <h2 className="uppercase font-black text-white text-2xl text-center">
               {team2?.name}
             </h2>
           </div>
         </div>
         <div className="absolute top-20.75 left-77.5">
-          <div className="  w-60 h-20 flex items-center justify-center">
+          <div className="  w-54 h-20 flex items-center justify-center">
             <h2 className="uppercase font-black text-white text-2xl text-center">
               {team1?.name}
             </h2>
           </div>
         </div>
-        <div className="absolute top-13.75 left-192">
+        <div className="absolute top-13.75 left-180">
           <div className=" w-20 h-20 flex items-center justify-center">
             <h2 className="uppercase font-black text-5xl text-center">
               {sets[sets.length - 1].team1_score}
             </h2>
           </div>
         </div>
-        <div className="absolute top-13.75 right-192">
+        <div className="absolute top-13.75 right-180">
           <div className=" w-20 h-20 flex items-center justify-center">
             <h2 className="uppercase font-black text-5xl text-center">
               {sets[sets.length - 1].team2_score}
@@ -110,7 +110,7 @@ export default function ScorePage({ teams, scores }: Props) {
           </div>
         </div>
 
-        <div className="absolute top-20.75 left-139.5">
+        <div className="absolute top-20.75 left-132">
           <div className="  w-20 h-20 flex items-center justify-center">
             <div className="h-16 border-l-2 border-white pl-5">
               <h2 className="uppercase font-semibold text-white text-lg text-center">
@@ -122,7 +122,7 @@ export default function ScorePage({ teams, scores }: Props) {
             </div>
           </div>
         </div>
-        <div className="absolute top-20.75 right-139.5">
+        <div className="absolute top-20.75 right-132">
           <div className="  w-20 h-20 flex items-center justify-center">
             <div className="h-16 border-r-2 border-white pr-5">
               <h2 className="uppercase font-semibold text-white text-lg text-center">
