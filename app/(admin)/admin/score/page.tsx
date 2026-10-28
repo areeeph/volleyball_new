@@ -13,5 +13,7 @@ export default async function Page() {
   const score: Score[] = data.data;
   const teams: Team[] = data1.data;
 
+  console.log(data);
+
   return <ScorePage teams={teams} scores={score} />;
 }

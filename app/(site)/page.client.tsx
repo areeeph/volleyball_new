@@ -38,7 +38,7 @@ export default function ScoreFrontPage({ teams, scores }: Props) {
 
   return (
     <div>
-      <div className="bg-blue-800 text-white h-9 min-w-55 mb-1 rounded-lg w-80">
+      <div className="bg-[#fdf9f1] text-black font-semibold h-9 min-w-55 mb-1 rounded-lg w-80">
         <div className="flex items-center h-9 justify-between">
           <div className="flex items-center py-1 pl-3">
             <h2 id="team1-name">{team1?.name || "Team 1"}</h2>
@@ -58,7 +58,7 @@ export default function ScoreFrontPage({ teams, scores }: Props) {
             {sets.map((set, index) => (
               <div
                 key={index}
-                className="m-0 w-9 h-9 bg-white text-blue-700 font-semibold flex items-center justify-center last:rounded-r-lg last:bg-red-600 last:text-white"
+                className="m-0 w-9 h-9 bg-white text-blue-700 font-semibold flex items-center justify-center last:rounded-r-lg last:bg-[#f25c05] last:text-white"
               >
                 <h3 id={`team1-score-${index}`}>{set.team1_score || 0}</h3>
               </div>
@@ -66,7 +66,7 @@ export default function ScoreFrontPage({ teams, scores }: Props) {
           </div>
         </div>
       </div>
-      <div className="bg-blue-800 text-white h-9 min-w-55  rounded-lg w-80">
+      <div className="bg-[#fdf9f1] text-black font-semibold h-9 min-w-55  rounded-lg w-80">
         <div className="flex items-center h-9 justify-between">
           <div className="flex items-center py-1 pl-3">
             <h2 id="team2-name">{team2?.name || "Team 2"}</h2>
@@ -86,7 +86,7 @@ export default function ScoreFrontPage({ teams, scores }: Props) {
             {sets.map((set, index) => (
               <div
                 key={index}
-                className="m-0 w-9 h-9 bg-white text-blue-700 font-semibold flex items-center justify-center last:rounded-r-lg last:bg-red-600 last:text-white"
+                className="m-0 w-9 h-9 bg-white text-blue-700 font-semibold flex items-center justify-center last:rounded-r-lg last:bg-[#f25c05] last:text-white"
               >
                 <h3 id={`team2-score-${index}`}>{set.team2_score || 0}</h3>
               </div>

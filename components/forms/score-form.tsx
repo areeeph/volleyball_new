@@ -39,6 +39,7 @@ type Props = {
 };
 
 export default function ScoreForm({ teams, score }: Props) {
+  console.log(score);
   const [set, setSet] = useState<number>(score?.current_set || 1);
   const [score1, setScore1] = useState<number>(
     score?.sets[set - 1]?.team1_score || 0,
@@ -48,6 +49,7 @@ export default function ScoreForm({ teams, score }: Props) {
   );
 
   const [sets, setSets] = useState<Set[]>(score?.sets || []);
+  console.log(sets.length);
 
   const {
     register,
@@ -337,7 +339,7 @@ export default function ScoreForm({ teams, score }: Props) {
         </button>
         <button
           type="button"
-          disabled={sets.length == 0}
+          disabled={sets.length == 1}
           onClick={() => deleteSet()}
           className="inline-flex items-center justify-center rounded-xl border border-red-700 bg-red-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
         >

@@ -3,6 +3,12 @@ export type Set = {
   team1_score: number;
   team2_score: number;
 };
+
+export type TopTen = {
+  score: number;
+  team: Team;
+};
+
 export type Score = {
   id: string;
   sequenceId: number;
@@ -10,6 +16,7 @@ export type Score = {
   current_set: number;
   team1: Team;
   team2: Team;
+  topTen: TopTen[];
 };
 
 export type Team = {
