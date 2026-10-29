@@ -97,14 +97,14 @@ export default function ScorePage({ teams, scores }: Props) {
         </div>
         <div className="absolute top-13.75 left-180">
           <div className=" w-20 h-20 flex items-center justify-center">
-            <h2 className="uppercase font-black text-5xl text-center">
+            <h2 className="uppercase font-black text-5xl text-center text-black">
               {sets[sets.length - 1].team1_score}
             </h2>
           </div>
         </div>
         <div className="absolute top-13.75 right-180">
           <div className=" w-20 h-20 flex items-center justify-center">
-            <h2 className="uppercase font-black text-5xl text-center">
+            <h2 className="uppercase font-black text-5xl text-center text-black">
               {sets[sets.length - 1].team2_score}
             </h2>
           </div>
