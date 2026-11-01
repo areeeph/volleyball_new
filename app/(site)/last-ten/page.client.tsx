@@ -41,7 +41,7 @@ export default function TopTenPage({ scores }: Props) {
             .map((top, index) => (
               <div key={index} className="grid grid-cols-2 ">
                 <div className="border-r border-gray-300 flex justify-end pb-7">
-                  {top.team.id === team1.id && (
+                  {top.team?.id === team1.id && (
                     <div className="py-2 px-3 flex items-center space-x-2">
                       <p className="text-2xl font-semibold">{top.score}</p>
                       <img src="/ball.png" className="w-8 h-8" alt="Ball" />
@@ -49,7 +49,7 @@ export default function TopTenPage({ scores }: Props) {
                   )}
                 </div>
                 <div>
-                  {top.team.id === team2.id && (
+                  {top.team?.id === team2.id && (
                     <div className="py-2 px-3 flex items-center space-x-2">
                       <img src="/ball.png" className="w-8 h-8" />
                       <p className="text-2xl font-semibold">{top.score}</p>
@@ -61,14 +61,14 @@ export default function TopTenPage({ scores }: Props) {
           <div className="grid grid-cols-2">
             <div className="border-r border-gray-300 flex justify-center">
               <div className="py-2 px-3 flex items-center space-x-2 justify-center">
-                <p className="text-2xl font-semibold text-center">
+                <p className="text-xl font-semibold text-center">
                   {team1?.name}
                 </p>
               </div>
             </div>
             <div>
               <div className="py-2 px-3 flex items-center space-x-2  justify-center">
-                <p className="text-2xl font-semibold text-center">
+                <p className="text-xl font-semibold text-center">
                   {team2?.name}
                 </p>
               </div>
