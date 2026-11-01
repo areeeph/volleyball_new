@@ -59,50 +59,50 @@ export default function ScorePage({ teams, scores }: Props) {
     <div className="w-480 flex justify-center ">
       <div className="relative">
         <img src="/score.webp" alt="" />
-        <div className="absolute top-7 left-15">
-          <div className=" rounded-full overflow-hidden w-40 h-32.5 flex items-center justify-center">
+        <div className="absolute top-15.75 left-12">
+          <div className=" rounded-full overflow-hidden w-40 h-20 flex items-center justify-center">
             <Image
               width={200}
               height={120}
               alt="Kendhikulhudhoo"
               src={`${process.env.NEXT_PUBLIC_IMAGES_URL}${team1?.logo}`}
-              className="h-30 w-auto"
+              className="h-18 w-auto"
             />
           </div>
         </div>
-        <div className="absolute top-7 right-15">
-          <div className="rounded-full overflow-hidden  w-40 h-32.5 flex items-center justify-center">
+        <div className="absolute top-15.75 right-12">
+          <div className=" rounded-full overflow-hidden  w-40 h-20 flex items-center justify-center">
             <Image
               width={200}
               height={120}
               alt="Kendhikulhudhoo"
               src={`${process.env.NEXT_PUBLIC_IMAGES_URL}${team2?.logo}`}
-              className="h-30 w-auto"
+              className="h-18 w-auto"
             />
           </div>
         </div>
-        <div className="absolute top-20.75 right-77.5">
-          <div className="  w-54 h-20 flex items-center justify-center">
+        <div className="absolute top-15.75 right-65.5">
+          <div className="  w-56 h-20 flex items-center justify-center">
             <h2 className="uppercase font-black text-white text-2xl text-center">
               {team2?.name}
             </h2>
           </div>
         </div>
-        <div className="absolute top-20.75 left-77.5">
-          <div className="  w-54 h-20 flex items-center justify-center">
+        <div className="absolute top-15.75 left-65.5">
+          <div className=" w-56 h-20 flex items-center justify-center">
             <h2 className="uppercase font-black text-white text-2xl text-center">
               {team1?.name}
             </h2>
           </div>
         </div>
-        <div className="absolute top-13.75 left-180">
+        <div className="absolute top-9.75 left-170">
           <div className=" w-20 h-20 flex items-center justify-center">
             <h2 className="uppercase font-black text-5xl text-center text-black">
               {sets[sets.length - 1].team1_score}
             </h2>
           </div>
         </div>
-        <div className="absolute top-13.75 right-180">
+        <div className="absolute top-9.75 right-170">
           <div className=" w-20 h-20 flex items-center justify-center">
             <h2 className="uppercase font-black text-5xl text-center text-black">
               {sets[sets.length - 1].team2_score}
@@ -110,27 +110,31 @@ export default function ScorePage({ teams, scores }: Props) {
           </div>
         </div>
 
-        <div className="absolute top-20.75 left-132">
+        <div className="absolute top-16.25 left-126">
           <div className="  w-20 h-20 flex items-center justify-center">
             <div className="h-16 border-l-2 border-white pl-5">
-              <h2 className="uppercase font-semibold text-white text-lg text-center">
-                SETS
-              </h2>
-              <p className="uppercase font-black text-white text-xl text-center">
-                {getSetNumber(1)}
-              </p>
+              <div className="h-16 flex flex-col items-center justify-center">
+                <h2 className="uppercase font-semibold text-white text-lg text-center">
+                  SETS
+                </h2>
+                <p className="uppercase font-black text-white text-xl text-center">
+                  {getSetNumber(1)}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="absolute top-20.75 right-132">
+        <div className="absolute top-16.25 right-126">
           <div className="  w-20 h-20 flex items-center justify-center">
             <div className="h-16 border-r-2 border-white pr-5">
-              <h2 className="uppercase font-semibold text-white text-lg text-center">
-                SETS
-              </h2>
-              <p className="uppercase font-black text-white text-xl text-center">
-                {getSetNumber(2)}
-              </p>
+              <div className="h-16 flex flex-col items-center justify-center">
+                <h2 className="uppercase font-semibold text-white text-lg text-center">
+                  SETS
+                </h2>
+                <p className="uppercase font-black text-white text-xl text-center">
+                  {getSetNumber(2)}
+                </p>
+              </div>
             </div>
           </div>
         </div>

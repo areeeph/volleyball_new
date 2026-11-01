@@ -29,44 +29,48 @@ export default function TopTenPage({ scores }: Props) {
     };
   }, []);
   return (
-    <div className="mx-auto py-5">
-      <div className="bg-white/40 w-60 h-140 backdrop-blur-md rounded-xl shadow">
+    <div className="mx-auto py-5 h-271 ">
+      <div className="bg-[#fdf9f1]/40 w-74 h-201 backdrop-blur-md rounded-xl shadow">
         <div className="py-5">
-          <h2 className="text-center text-neutral-800 mb-2 text-lg font-semibold">
+          <h2 className="text-center text-neutral-800 mb-2 text-xl font-semibold">
             Last 10 Points
           </h2>
           {tops
             .slice(-10)
             .reverse()
             .map((top, index) => (
-              <div key={index} className="grid grid-cols-2">
-                <div className="border-r border-gray-300 flex justify-end">
+              <div key={index} className="grid grid-cols-2 ">
+                <div className="border-r border-gray-300 flex justify-end pb-7">
                   {top.team.id === team1.id && (
                     <div className="py-2 px-3 flex items-center space-x-2">
-                      <p className="text-lg">{top.score}</p>
-                      <img src="/ball.png" className="w-6 h-6" alt="Ball" />
+                      <p className="text-2xl font-semibold">{top.score}</p>
+                      <img src="/ball.png" className="w-8 h-8" alt="Ball" />
                     </div>
                   )}
                 </div>
                 <div>
                   {top.team.id === team2.id && (
                     <div className="py-2 px-3 flex items-center space-x-2">
-                      <img src="/ball.png" className="w-6 h-6" />
-                      <p className="text-lg">{top.score}</p>
+                      <img src="/ball.png" className="w-8 h-8" />
+                      <p className="text-2xl font-semibold">{top.score}</p>
                     </div>
                   )}
                 </div>
               </div>
             ))}
           <div className="grid grid-cols-2">
-            <div className="border-r border-gray-300 flex justify-end">
-              <div className="py-2 px-3 flex items-center space-x-2">
-                <p className="text-lg">{team1?.name}</p>
+            <div className="border-r border-gray-300 flex justify-center">
+              <div className="py-2 px-3 flex items-center space-x-2 justify-center">
+                <p className="text-2xl font-semibold text-center">
+                  {team1?.name}
+                </p>
               </div>
             </div>
             <div>
-              <div className="py-2 px-3 flex items-center space-x-2">
-                <p className="text-lg">{team2?.name}</p>
+              <div className="py-2 px-3 flex items-center space-x-2  justify-center">
+                <p className="text-2xl font-semibold text-center">
+                  {team2?.name}
+                </p>
               </div>
             </div>
           </div>
