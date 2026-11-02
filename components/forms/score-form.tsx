@@ -140,6 +140,14 @@ export default function ScoreForm({ teams, score }: Props) {
     console.log("Updating team");
     handleSubmit(onSubmit)();
   };
+
+  const resetScore = () => {
+    setScore1(0);
+    setValue("team1_score", 0);
+    setScore2(0);
+    setValue("team2_score", 0);
+    handleSubmit(onSubmit)();
+  };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-5">
@@ -344,6 +352,14 @@ export default function ScoreForm({ teams, score }: Props) {
           className="inline-flex items-center justify-center rounded-xl border border-red-700 bg-red-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700"
         >
           Delete Set
+        </button>
+
+        <button
+          type="button"
+          onClick={() => resetScore()}
+          className="inline-flex items-center justify-center rounded-xl border border-green-700 bg-green-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-green-800"
+        >
+          Reset Score
         </button>
       </div>
     </form>
