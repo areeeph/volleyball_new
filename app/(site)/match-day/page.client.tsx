@@ -64,7 +64,7 @@ export default function FixtureMarquee({ fixtures }: FixtureMarqueeProps) {
   );
 
   return (
-    <div className="flex h-16 w-full overflow-hidden bg-[#fdf9f1] text-black">
+    <div className="flex h-16 max-w-[1920px] overflow-hidden bg-[#fdf9f1] text-black">
       {/* Fixed title */}
       <div className="z-10 flex shrink-0 items-center bg-[#217b6b] text-white px-5 text-sm font-bold">
         UPCOMING MATCHES
