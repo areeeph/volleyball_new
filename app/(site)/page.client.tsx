@@ -40,12 +40,7 @@ export default function ScoreFrontPage({ teams, scores }: Props) {
     <div className="inline-grid grid-cols-[max-content_max-content] gap-y-1 font-semibold text-black">
       {/* Team 1 Name */}
       <div className="flex h-11 items-center rounded-l-lg bg-[#fdf9f1] px-3 text-lg">
-        <h2 id="team1-name">{team1?.name || "Team 1"}</h2>
-      </div>
-
-      {/* Team 1 Logo and Scores */}
-      <div className="flex h-11 items-center rounded-r-lg bg-[#fdf9f1]">
-        <div className="flex h-11 w-12 items-center justify-center">
+        <div className="flex h-11 w-12 items-center justify-start">
           {team1?.logo && (
             <Image
               src={`${process.env.NEXT_PUBLIC_IMAGES_URL}${team1.logo}`}
@@ -56,7 +51,13 @@ export default function ScoreFrontPage({ teams, scores }: Props) {
             />
           )}
         </div>
+        <h2 className="pl-2 pr-3" id="team1-name">
+          {team1?.name || "Team 1"}
+        </h2>
+      </div>
 
+      {/* Team 1 Logo and Scores */}
+      <div className="flex h-11 items-center rounded-r-lg bg-[#fdf9f1]">
         {sets.map((set, index) => (
           <div
             key={index}
@@ -69,12 +70,7 @@ export default function ScoreFrontPage({ teams, scores }: Props) {
 
       {/* Team 2 Name */}
       <div className="flex h-11 items-center rounded-l-lg bg-[#fdf9f1] px-3 text-lg">
-        <h2 id="team2-name">{team2?.name || "Team 2"}</h2>
-      </div>
-
-      {/* Team 2 Logo and Scores */}
-      <div className="flex h-11 items-center rounded-r-lg bg-[#fdf9f1]">
-        <div className="flex h-11 w-12 items-center justify-center">
+        <div className="flex h-11 w-12 items-center justify-start">
           {team2?.logo && (
             <Image
               src={`${process.env.NEXT_PUBLIC_IMAGES_URL}${team2.logo}`}
@@ -85,7 +81,13 @@ export default function ScoreFrontPage({ teams, scores }: Props) {
             />
           )}
         </div>
+        <h2 className="pl-2 pr-3" id="team2-name">
+          {team2?.name || "Team 2"}
+        </h2>
+      </div>
 
+      {/* Team 2 Logo and Scores */}
+      <div className="flex h-11 items-center rounded-r-lg bg-[#fdf9f1]">
         {sets.map((set, index) => (
           <div
             key={index}

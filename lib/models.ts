@@ -26,3 +26,11 @@ export type Team = {
   short_name: string;
   logo: string;
 };
+
+export type Fixture = {
+  id: string;
+  date: string;
+  time: string;
+  team1: Team;
+  team2: Team;
+};

@@ -23,6 +23,11 @@ const navItems: NavItem[] = [
     icon: Volleyball,
   },
   {
+    title: "Fixtures",
+    href: "/admin/fixtures",
+    icon: Users,
+  },
+  {
     title: "Teams",
     href: "/admin/teams",
     icon: Users,
