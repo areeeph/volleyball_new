@@ -30,6 +30,7 @@ export type Team = {
 export type Fixture = {
   id: string;
   date: string;
+  division: string;
   time: string;
   team1: Team;
   team2: Team;

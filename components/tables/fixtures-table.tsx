@@ -62,6 +62,9 @@ export default function FixturesTable({ fixtures }: Props) {
               </th>
 
               <th className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Division
+              </th>
+              <th className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide text-gray-500">
                 Actions
               </th>
             </tr>
@@ -113,6 +116,8 @@ export default function FixturesTable({ fixtures }: Props) {
                       </div>
                     </div>
                   </td>
+
+                  <td className="px-5 py-4">{fixture.division}</td>
 
                   {/* Actions */}
                   <td className="px-5 py-4">

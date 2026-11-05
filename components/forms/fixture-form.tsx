@@ -28,6 +28,7 @@ type FormFields = {
   team2: string;
   date: string;
   time: string;
+  division: string;
 };
 
 type Props = {
@@ -50,6 +51,7 @@ export default function FixtureForm({ closeSheet, fixture, teams }: Props) {
       team2: fixture?.team2?.id || "",
       date: fixture?.date || "",
       time: fixture?.time || "",
+      division: fixture?.division || "",
     },
   });
 
@@ -172,6 +174,24 @@ export default function FixtureForm({ closeSheet, fixture, teams }: Props) {
         )}
       </Field>
 
+      <Field>
+        <FieldLabel htmlFor="division">Division</FieldLabel>
+
+        <Input
+          {...register("division", {
+            required: "Division is required",
+          })}
+          type="text"
+          placeholder="Enter division..."
+          id="division"
+        />
+
+        {errors.division && (
+          <FieldDescription className="text-red-500 text-sm">
+            {errors.division.message}
+          </FieldDescription>
+        )}
+      </Field>
       <Field>
         <FieldLabel htmlFor="time">Time</FieldLabel>
 
