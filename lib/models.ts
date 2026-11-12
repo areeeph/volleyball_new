@@ -35,3 +35,16 @@ export type Fixture = {
   team1: Team;
   team2: Team;
 };
+
+export type Position = {
+  id: string;
+  title: string;
+  name: string;
+  team: Team;
+};
+
+export type TopSix = {
+  id: string;
+  name: string;
+  team: Team;
+};
